@@ -1,0 +1,11 @@
+def alphabet_position(text):
+    alphabet = 'abcdefghijklmnopqrstuvwxyz'
+    result = []
+    for i in text.lower():
+
+        if i in alphabet:
+            index = alphabet.index(i) + 1
+            result.append(index)
+
+    new_result = " ".join(str(item) for item in result)
+    return new_result
