@@ -1,11 +1,17 @@
-def string_compression(s):
-    str = list(s)
-    count = 0
-    for x in range(len(str)):
-        while str[x] == str[x+1]:
-            count+=1
-            print(count)
-        str[x+1] = str(count)
-        count = 0
+'''
+Uses 'string'.count() method to determine index
+'''
 
-    return str
+def string_compression(s):
+    result = ""
+    chars = list(s)
+    index = 0
+
+    while index < len(chars):
+        char = chars[index]
+        count = s.count(char)
+
+        result += char + str(count)
+        index += count
+
+    return result
